@@ -1,8 +1,5 @@
 package effectivejava.chapter2.item3.staticfactory;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-
 // Singleton with static factory (Page 17)
 public class Elvis {
     private static final Elvis INSTANCE = new Elvis();
