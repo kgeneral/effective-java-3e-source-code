@@ -21,7 +21,8 @@ public abstract class Pizza {
         // Subclasses must override this method to return "this"
         protected abstract T self();
     }
-    
+
+    // defensive copy for keep invariant
     Pizza(Builder<?> builder) {
         toppings = builder.toppings.clone(); // See Item 50
     }
