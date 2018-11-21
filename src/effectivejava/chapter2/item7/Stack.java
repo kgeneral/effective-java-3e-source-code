@@ -31,7 +31,7 @@ public class Stack {
             elements = Arrays.copyOf(elements, 2 * size + 1);
     }
 
-//    // Corrected version of pop method (Page 27)
+    // Corrected version of pop method (Page 27)
 //    public Object pop() {
 //        if (size == 0)
 //            throw new EmptyStackException();
@@ -40,12 +40,27 @@ public class Stack {
 //        return result;
 //    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Stack stack = new Stack();
-        for (String arg : args)
-            stack.push(arg);
 
-        while (true)
-            System.err.println(stack.pop());
+        System.out.println("push");
+
+        //for (String arg : args)
+        for(int i=0;i< 0x02ffffff ;i++)
+            stack.push(String.valueOf(i));
+
+        Thread.sleep(10000);
+
+        System.out.println("pop");
+
+        int sleepPeriod = 10000;
+        int counter = 0;
+        while (true) {
+            stack.pop();
+            counter++;
+            if(counter % sleepPeriod == 0)
+                Thread.sleep(100);
+        }
+            //System.err.println(stack.pop());
     }
 }
